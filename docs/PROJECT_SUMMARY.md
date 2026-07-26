@@ -1,112 +1,81 @@
-# Nexora
+# 📌 Nexora - Project Summary
 
-<div align="center">
-
-### Production-Ready Multi-Vendor E-Commerce Marketplace
-
-*A scalable enterprise backend built with Spring Boot following clean architecture, RESTful API design, and industry best practices.*
-
-![Java](https://img.shields.io/badge/Java-17+-orange)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
-![Spring Security](https://img.shields.io/badge/Spring%20Security-JWT-success)
-![Hibernate](https://img.shields.io/badge/Hibernate-JPA-brown)
-![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
-![Docker](https://img.shields.io/badge/Docker-Ready-blue)
-![Kafka](https://img.shields.io/badge/Kafka-Event--Driven-black)
-![Redis](https://img.shields.io/badge/Redis-Caching-red)
-![License](https://img.shields.io/badge/License-MIT-green)
-
-</div>
+> **Quick Reference Guide**
+>
+> Read this document before starting a coding session.
 
 ---
 
-## 📌 Project Overview
+# Project Vision
 
-Nexora is a production-ready multi-vendor e-commerce marketplace where multiple sellers can manage their stores while customers browse products, place orders, make payments, and track deliveries.
+Nexora is a production-ready Multi-Vendor E-Commerce Marketplace built using Java and the Spring ecosystem.
 
-The project is being developed as a real-world backend application while progressively learning the Spring ecosystem—from Spring Core to Docker, Redis, Kafka, testing, and deployment.
+The objective is to learn Spring deeply by building an enterprise-grade application rather than isolated CRUD examples.
 
-The goal is to build a scalable, maintainable, and enterprise-grade application rather than a simple CRUD project.
-
----
-
-## 🎯 Project Goals
-
-- Build a production-ready Spring Boot backend
-- Learn Spring by implementing real business features
-- Follow Clean Architecture and SOLID principles
-- Implement secure JWT authentication
-- Design scalable REST APIs
-- Apply Hibernate and Spring Data JPA effectively
-- Integrate Redis for caching
-- Integrate Apache Kafka for event-driven communication
-- Containerize the application with Docker
-- Prepare the application for cloud deployment
+The project follows industry standards including Clean Architecture, SOLID Principles, layered architecture, and RESTful API design.
 
 ---
 
-## 👥 User Roles
+# Project Goals
 
-### Guest
+- Build a scalable backend
+- Learn Spring through real implementation
+- Write clean and maintainable code
+- Apply enterprise design principles
+- Build a deployment-ready application
+- Create a strong GitHub portfolio project
+
+---
+
+# User Roles
+
+## Guest
 
 - Browse products
 - Search products
 - Register
 - Login
 
-### Customer
+---
+
+## Customer
 
 - Manage profile
 - Manage addresses
 - Wishlist
 - Shopping cart
 - Place orders
-- Track orders
-- Review purchased products
+- Payment
+- Order tracking
+- Product reviews
 
-### Seller
+---
+
+## Seller
 
 - Manage store
 - Manage products
-- Manage inventory
-- Process orders
-- Manage shipments
-- View dashboard
+- Inventory management
+- Order management
+- Shipment management
+- Dashboard
 
-### Administrator
+---
+
+## Administrator
 
 - Manage users
 - Approve sellers
 - Manage categories
 - Manage coupons
-- Platform administration
+- Platform monitoring
 - Reports & Analytics
 
 ---
 
-# 🏗️ Architecture
+# Technology Stack
 
-```text
-React Frontend
-       │
-REST API (HTTPS)
-       │
-Spring Security + JWT
-       │
-Controller Layer
-       │
-Service Layer
-       │
-Repository Layer
-       │
-MySQL Database
-```
-
----
-
-# 🛠️ Technology Stack
-
-### Backend
+## Backend
 
 - Java
 - Spring Boot
@@ -114,185 +83,285 @@ MySQL Database
 - Spring Data JPA
 - Hibernate
 - Spring Security
-- JWT Authentication
+- JWT
 - Bean Validation
 
-### Database
+## Database
 
 - MySQL
 
-### Caching
+## Future Integrations
 
 - Redis
-
-### Messaging
-
 - Apache Kafka
-
-### Documentation
-
-- Swagger / OpenAPI
-
-### Build Tool
-
-- Maven
-
-### Testing
-
-- JUnit
-- Mockito
-
-### Containerization
-
 - Docker
-
-### Version Control
-
-- Git
-- GitHub
 
 ---
 
-# 📦 Project Structure
+# Architecture
 
 ```text
-src
- └── main
-      └── java
-           └── com.saurabh.nexora
-                ├── config
-                ├── controller
-                ├── service
-                ├── repository
-                ├── entity
-                ├── dto
-                ├── mapper
-                ├── security
-                ├── exception
-                ├── validation
-                ├── util
-                ├── common
-                ├── event
-                ├── cache
-                └── constant
+React Frontend
+       │
+REST API
+       │
+Spring Security
+       │
+Controllers
+       │
+Services
+       │
+Repositories
+       │
+MySQL Database
 ```
 
 ---
 
-# 📚 Project Documentation
+# Project Structure
 
-Complete project documentation is available in the **docs/** directory.
+```text
+com.saurabh.nexora
+
+config
+
+controller
+
+service
+ └── impl
+
+repository
+
+entity
+
+dto
+ ├── request
+ └── response
+
+mapper
+
+security
+
+exception
+
+validation
+
+util
+
+common
+
+constant
+
+event
+
+cache
+```
+
+---
+
+# Core Modules
+
+- Authentication
+- Users
+- Sellers
+- Categories
+- Products
+- Inventory
+- Cart
+- Wishlist
+- Orders
+- Payments
+- Shipping
+- Reviews
+- Notifications
+- Dashboard
+- Reports
+
+---
+
+# Core Database Entities
+
+- User
+- Seller
+- Address
+- Category
+- Product
+- Product Variant
+- Product Image
+- Inventory
+- Cart
+- Cart Item
+- Wishlist
+- Wishlist Item
+- Order
+- SubOrder
+- Order Item
+- Payment
+- Shipment
+- Review
+- Notification
+- Coupon
+
+---
+
+# API Standards
+
+Base URL
+
+```
+/api/v1
+```
+
+Authentication
+
+```
+JWT Bearer Token
+```
+
+Standard Response
+
+```json
+{
+  "success": true,
+  "message": "Operation completed successfully",
+  "data": {},
+  "timestamp": "2026-01-01T10:00:00Z"
+}
+```
+
+---
+
+# Coding Standards
+
+Always follow
+
+- Controller → Service → Repository
+- DTO for request and response
+- Never expose entities directly
+- Validate every request
+- Handle exceptions globally
+- Keep business logic inside Service layer
+- Keep Controllers thin
+- Use constructor injection
+- Follow SOLID principles
+
+---
+
+# Git Commit Convention
+
+Examples
+
+```
+feat: add product module
+
+feat: implement JWT authentication
+
+fix: resolve inventory update issue
+
+docs: update API documentation
+
+refactor: simplify order service
+
+test: add unit tests for user service
+
+chore: configure Docker
+```
+
+---
+
+# Development Order
+
+1. Project Setup
+2. Global Configuration
+3. Exception Handling
+4. Validation
+5. Authentication
+6. User Module
+7. Seller Module
+8. Category Module
+9. Product Module
+10. Inventory
+11. Cart
+12. Wishlist
+13. Orders
+14. Payments
+15. Shipping
+16. Reviews
+17. Notifications
+18. Dashboard
+19. Redis
+20. Kafka
+21. Docker
+22. Testing
+23. Deployment
+
+---
+
+# Project Documents
 
 - Software Requirements Specification
 - System Architecture
 - Database Design
 - API Design
 - Development Roadmap
-- Project Summary
 
 ---
 
-# 🚀 Development Roadmap
+# Daily Development Checklist
 
-- ✅ Planning & Documentation
-- 🔄 Spring Boot Foundation
-- ⏳ Authentication & Authorization
-- ⏳ User Management
-- ⏳ Seller Management
-- ⏳ Product Management
-- ⏳ Inventory Management
-- ⏳ Shopping Cart
-- ⏳ Wishlist
-- ⏳ Order Management
-- ⏳ Payment Integration
-- ⏳ Shipping
-- ⏳ Reviews & Ratings
-- ⏳ Notifications
-- ⏳ Redis Integration
-- ⏳ Kafka Integration
-- ⏳ Docker
-- ⏳ Testing
-- ⏳ Deployment
+Before Coding
+
+- Read today's module requirements
+- Review database design
+- Review API design
+- Create Entity
+- Create Repository
+- Create Service
+- Create Controller
+- Create DTOs
+- Add Validation
+- Add Exception Handling
+- Write Tests
+- Update Documentation
+- Commit Changes
 
 ---
 
-# ⭐ Key Features
+# Project Principles
 
-- Multi-Vendor Marketplace
-- JWT Authentication
-- Role-Based Authorization
-- RESTful APIs
-- Product Variants
-- Inventory Management
-- Shopping Cart
-- Wishlist
-- Order Processing
-- Payment Module
-- Shipment Tracking
-- Reviews & Ratings
-- Notifications
-- Redis Caching
-- Kafka Event Streaming
-- Docker Support
-- Swagger API Documentation
+✔ Documentation First
+
+✔ Clean Architecture
+
+✔ SOLID Principles
+
+✔ Production-Oriented Development
+
+✔ Incremental Feature Development
+
+✔ Consistent Git History
+
+✔ Enterprise Coding Standards
 
 ---
 
-# 🎯 Learning Objectives
+# End Goal
 
-This repository demonstrates practical implementation of:
+Develop a production-ready backend application that demonstrates practical expertise in:
 
-- Spring Core
+- Spring Framework
 - Spring Boot
 - Spring MVC
 - Spring Data JPA
 - Hibernate
 - Spring Security
 - JWT
-- Bean Validation
-- Exception Handling
-- REST API Design
+- REST APIs
+- MySQL
 - Redis
-- Apache Kafka
+- Kafka
 - Docker
 - Testing
-- Clean Architecture
-- SOLID Principles
+- Deployment
 
----
-
-# 📈 Current Status
-
-**Project Phase:** Planning Complete → Development Started
-
-The project has completed:
-
-- Software Requirements Specification
-- System Architecture
-- Database Design
-- API Design
-- Development Roadmap
-
-Implementation is being developed incrementally following the project roadmap.
-
----
-
-# 🤝 Contributing
-
-Contributions, suggestions, and feedback are welcome.
-
-Please open an issue before submitting major changes.
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-<div align="center">
-
-**Built with ❤️ using Java & Spring Boot**
-
-</div>
+This project serves as both a learning journey and a professional portfolio application.
