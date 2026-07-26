@@ -1,11 +1,5 @@
 # 📌 Nexora - Project Summary
 
-> **Quick Reference Guide**
->
-> Read this document before starting a coding session.
-
----
-
 # Project Vision
 
 Nexora is a production-ready Multi-Vendor E-Commerce Marketplace built using Java and the Spring ecosystem.
@@ -363,5 +357,3 @@ Develop a production-ready backend application that demonstrates practical exper
 - Docker
 - Testing
 - Deployment
-
-This project serves as both a learning journey and a professional portfolio application.
