@@ -1,54 +1,30 @@
 package com.nexora.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.validation.Valid;
+import com.nexora.entity.Product;
+import com.nexora.service.ProductService;
 
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
 
-	@GetMapping
-    public ResponseEntity<String> getProducts(){
-
-        return ResponseEntity.ok("All Products");
-
-    }
+	private final ProductService productService;
 	
-	@GetMapping("/{id}")
-	public ResponseEntity<String> getProductsById(@PathVariable Long id){
-
-        return ResponseEntity.ok("Products By Id : " + id);
-
-    }
+	public ProductController(ProductService productService) {
+		this.productService = productService;
+	}
 	
 	@PostMapping
-	public ResponseEntity<String> addProducts(
-	        @Valid @RequestBody Product product
-	) {
-
-	    return ResponseEntity.ok("Product Created Successfully");
-
-	}
-	
-	@PutMapping("/{id}")
-	public ResponseEntity<String> updateProducts(@PathVariable Long id) {
-		return ResponseEntity.ok("Updated Products " + id);
-	}
-	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deleteProducts(@PathVariable Long id) {
-		return ResponseEntity.ok("Deleted Products " + id);
+	public ResponseEntity<Product> createProduct(@RequestBody Product product){
+		
+		Product savedProduct = productService.save(product);
+		
+		return ResponseEntity.ok(savedProduct);
 	}
 	
 }
